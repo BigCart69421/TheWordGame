@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+    <title>The Word Game - Complex</title>
+<style>
+    body{
+        background-color:aquamarine;
+    }
+
+    p {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    h1{
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    input{
+        font-family: Arial, Helvetica, sans-serif;
+        margin: auto;
+        padding: 0.5%;
+    }
+    .gameDiv{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: white;
+        text-align: center;
+    }
+
+    .bankDiv{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(25, 112, 125);
+        text-align: center;
+    }
+
+    label{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: large;
+    }
+
+    h4{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+</style>
+<script>
+    function processText() {
+  const prefix = document.getElementById("morph1").value;
+  const baseWord = document.getElementById("morph2").value;
+  const suffix = document.getElementById("morph3").value;
+  const word = prefix + baseWord + suffix;
+
+  // Assuming a function to check if the word is valid
+  if (isValidWord(word)) {
+    alert("You Got It!");
+  } else {
+    alert("Try again.");
+  }
+}
+
+function isValidWord(word) {
+  // Replace this with your word validation logic
+  // For example, using an array of valid words:
+  const validWords = ["unhappyness", /* other valid words */];
+  return validWords.includes(word);
+}
+</script>
+</head>
+<body>
+    <h1>The Word Game - Complex</h1>
+  <div class="gameDiv">
+   <form> 
+    <p>Prefix: </p><br>
+    <input type="text" id="morph1"><br>
+    <p>Baseword: </p><br>
+    <input type="text" id="morph2"><br>
+    <p>Suffix: </p><br>
+    <input type="text" id="morph3"><br>
+    <button onclick="processText()">Go :)</button>
+   </form>
+  </div>
+
+  <div class="bankDiv">
+    <h4>Word Bank</h4>
+    <p>Base Word: happy, care, wonder, hope, dream, friend. Prefixes: un, re, dis, pre, in, sub. </p>
+    </div>
+
+</body>
